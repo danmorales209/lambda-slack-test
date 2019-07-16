@@ -14,7 +14,7 @@
 3. Create the function in Lambda, and give it the role `AWSLambdaBasicExecutionRole`
 4. Create the API, and add it as a trigger for the Lamda function
 5. Configure the API gateway and lambda function per [the config](./config.md)
-6. Add the API endpoint to the Slack app `Resquest URL` (I used Slach Commands for this project)
+6. Add the API endpoint to the Slack app `Resquest URL` (I used Slash Commands for this project)
 7. Test!
 
 ---
