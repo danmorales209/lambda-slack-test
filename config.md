@@ -26,3 +26,5 @@ Note: for Nodejs env, handler assumes information is passed as an object, and al
     - `$rawInput` returns the message body as sent, no processing (important to authenticate requests)
     
 ## Slack
+- Ensure Incoming Webhooks enabled
+- Ensure Slack Commands Enabled
