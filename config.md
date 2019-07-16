@@ -1,8 +1,3 @@
-## TODO
-- [ ] Incorporate Slack webhook URL for longer requests
-- [ ] Setup to deploy with CloudFormation 
-- [ ] Figure out a way to incorporate API requests to prevent too many lambda requests (?)
----
 ## AWS
 ### Lambda .env configurations
 - LAMBDA_VERSION: Optional, track revision for quick communicaiton through Slack
