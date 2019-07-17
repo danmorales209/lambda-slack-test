@@ -26,11 +26,12 @@ Slack is moving towards [Signed Secrets](https://api.slack.com/docs/verifying-re
 
 To authenticate the slack message, create an [HMAC hash](https://nodejs.org/docs/latest-v8.x/api/crypto.html#crypto_class_hmac) using the Slack App Secret Signature, and hashing `v0:<timestamp>:<post request body>`. Compare this against the `X-Slack-Signature` header parameter passed with the request to determine if the message is valid.
 
-__Fun Fact:__ The lambda integration encodes spaces as `%2F`, and Slack expects spaces to be encoded as `+` in the message body! I used string.replace and some regex to manually convert, since 
+__Fun Fact:__ The lambda integration encodes spaces as `%2F`, and Slack expects spaces to be encoded as `+` in the message body! I used string.replace and some regex to manually convert. 
 
 
 
 ## TODO
+- [ ] Prevent any action if the message cannot be verified
 - [ ] Incorporate Slack webhook URL for longer requests
 - [ ] Setup to deploy with CloudFormation 
 - [ ] Figure out a way to incorporate API requests to prevent too many lambda requests (?)
