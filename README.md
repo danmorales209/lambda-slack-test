@@ -19,6 +19,17 @@
 
 ---
 
+### Under the hood:
+Slack is moving towards [Signed Secrets](https://api.slack.com/docs/verifying-requests-from-slack) for authentication instead of using tokens. The app sends:
+- A timestamp (UTC-encoded seconds from 1970)
+- A signature ( currently in the form v0= xxxxxx )
+
+To authenticate the slack message, create an [HMAC hash](https://nodejs.org/docs/latest-v8.x/api/crypto.html#crypto_class_hmac) using the Slack App Secret Signature, and hashing `v0:<timestamp>:<post request body>`. Compare this against the `X-Slack-Signature` header parameter passed with the request to determine if the message is valid.
+
+__Fun Fact:__ The lambda integration encodes spaces as `%2F`, and Slack expects spaces to be encoded as `+` in the message body! 
+
+
+
 ## TODO
 - [ ] Incorporate Slack webhook URL for longer requests
 - [ ] Setup to deploy with CloudFormation 
